@@ -75,6 +75,8 @@ function App() {
 `notValue`function that nots the value from `true` to `false` and vise versa.
 Notice the `notValue` is not a lambda function, like in the **[before](#useNotBefore)**
 
+[![Edit useNot  (rhh demo)](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/rwk86po7rn)
+
 ### useForm
 `useForm` is for an advanced search, sign-up form, etc, something with a lot of text felds. Because you only need to use one hook.
 ___

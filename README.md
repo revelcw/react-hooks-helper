@@ -24,7 +24,6 @@ const [bar, notBar] = useNot(bool);
 const [{foo, bar}, ] = useForm({foo, bar});
 const [bar, notBar] = useTrafficLight([durations]);
 ```
-Where:
 
 ## Examples
 

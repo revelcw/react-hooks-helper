@@ -89,6 +89,8 @@ Right here is some code for a sign-up form. As you can see it is using two `useS
 function App() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [gender, setGender] = useState("Male");
+  const [isAccept, setAcceptToC] = useState(false);
   return (
     <div className="App">
       <input type="text" value={firstName} onChange={ ev => {
@@ -99,6 +101,29 @@ function App() {
         setLastName(ev.target.value)
       }} />
       <div>{lastName}</div>
+      <div className="radio-group">
+        <div className="radio">
+          <input type="radio" value="Female" checked={gender==="Female"} onChange={ ev => {
+            setGender(ev.target.value)
+          }} />
+          {' '} Female
+        </div>
+        <div className="radio">
+          <input type="radio" value="Male" checked={gender==="Male"} onChange={ ev => {
+            setGender(ev.target.value)
+          }} />
+          {' '} Male
+        </div>
+        <div>Selected Gender: { gender }</div>
+      </div>
+      <div>
+        <div className="checkbox">
+          <input type="checkbox" value="true" checked={isAccept==="true"} onChange={ ev => {
+            setAcceptToC(ev.target.checked)
+          }} />
+          {' '} I accept and agree Terms & Conditions.
+        </div>
+      </div>
     </div>
   );
 }
@@ -106,13 +131,30 @@ function App() {
 #### After
 ```jsx
 function App() {
-  const [{firstName, lastName}, setValue] = useForm({firstName: "", lastName: ""});
+  const [{firstName, lastName, gender, isAccept}, setValue] = useForm({firstName: "", lastName: "", gender: "Male", isAccept: false});
   return (
     <div className="App">
       <input type="text" value={firstName}  name="firstName" onChange={setValue} />
       <div>{firstName}</div>
       <input type="text" value={lastName} name="lastName" onChange={setValue} />
       <div>{lastName}</div>
+      <div className="radio-group">
+        <div className="radio">
+          <input type="radio" value="Female" checked={gender==="Female"} onChange={setValue} />
+          {' '} Female
+        </div>
+        <div className="radio">
+          <input type="radio" value="Male" checked={gender==="Male"} onChange={setValue} />
+          {' '} Male
+        </div>
+        <div>Selected Gender: { gender }</div>
+      </div>
+      <div>
+        <div className="checkbox">
+          <input type="checkbox" value="true" checked={isAccept==="true"} onChange={setValue} />
+          {' '} I accept and agree Terms & Conditions.
+        </div>
+      </div>
     </div>
   );
 }

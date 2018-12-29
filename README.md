@@ -164,7 +164,7 @@ import { useTrafficLight } from "react-hooks-helper";
 const AfterTrafficLight = ({ initialColor }) => {
   const [colorIndex, setColorIndex] = useTrafficLight(initialColor, [5000, 4000, 1000]);
 
-  return ([]
+  return (
     <div className="traffic-light">
       <Light color="#f00" active={colorIndex === 0} />
       <Light color="#ff0" active={colorIndex === 2} />

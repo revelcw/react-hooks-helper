@@ -106,7 +106,7 @@ function App() {
 #### After
 ```jsx
 function App() {
-  const [{firstName, lastName}, setValue] = useForm({first, last});
+  const [{firstName, lastName}, setValue] = useForm({first: "", last: ""});
   return (
     <div className="App">
       <input name="first" onChange={setValue} />

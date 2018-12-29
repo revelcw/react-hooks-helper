@@ -1,15 +1,16 @@
 {
   "name": "react-hooks-helper",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "A simple React Hook lib.",
-  "main": "dist/react-hook-helper.js",
-  "umd:main": "dist/react-hook-helper.umd.js",
-  "module": "dist/react-hook-helper.m.js",
+  "main": "dist/react-hooks-helper.js",
+  "umd:main": "dist/react-hooks-helper.umd.js",
+  "module": "dist/react-hooks-helper.m.js",
   "source": "src/index.js",
   "license": "MIT",
   "scripts": {
     "prepublishOnly": "npm run build",
-    "build": "microbundle -o dist/ --sourcemap false --compress false",
+    "lint": "eslint src",
+    "build": "npm run lint && rimraf dist && microbundle -o dist/ --sourcemap false --target web",
     "dev": "microbundle watch -o dist/ --sourcemap false --compress false"
   },
   "keywords": [
@@ -25,7 +26,8 @@
     "eslint-config-amex": "^9.0.0",
     "microbundle": "^0.8.3",
     "react": "^16.7.0-alpha.2",
-    "react-dom": "^16.7.0-alpha.2"
+    "react-dom": "^16.7.0-alpha.2",
+    "rimraf": "^2.6.2"
   },
   "peerDependencies": {
     "react": "^16.7.0-alpha.0"

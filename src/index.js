@@ -8,12 +8,12 @@ export const useNot = (initialValue) => {
   ];
 };
 
-export const useForm = initialState => {
-  const [value, setValue] = useState(initialState);
+export const useForm = (initialState) => {
+  const [formValues, setValue] = useState(initialState);
 
   return [
-    value,
-    ev => {
+    formValues,
+    (ev) => {
       const { name, value } = ev.target;
       setValue(currentValue => ({ ...currentValue, [name]: value }));
     },
@@ -21,12 +21,12 @@ export const useForm = initialState => {
 };
 
 export const useTrafficLight = (initialIndex = 0, durations = [5000, 4000, 1000]) => {
-  const [index, setIndex] = useState(initialIndex);
+  const [colorIndex, setIndex] = useState(initialIndex);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIndex((colorIndex + 1) % durations.length);
-    }, durations[index]);
+    }, durations[colorIndex]);
     return () => clearTimeout(timer);
   });
 

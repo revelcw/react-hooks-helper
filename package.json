@@ -1,6 +1,6 @@
 {
   "name": "react-hooks-helper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple React Hook lib.",
   "main": "dist/react-hooks-helper.js",
   "umd:main": "dist/react-hooks-helper.umd.js",

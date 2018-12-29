@@ -51,6 +51,7 @@ function App() {
     />
   );
 ```
+
 #### After
 
 ```jsx
@@ -77,12 +78,12 @@ Notice the `notValue` is not a lambda function, like in the **[before](#useNotBe
 [![Edit useNot  (rhh demo)](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/rwk86po7rn)
 
 ### useForm
-`useForm` is for an advanced search, sign-up form, etc, something with a lot of text felds. Because you only need to use one hook.
+`useForm` is for an advanced search, sign-up form, etc, something with a lot of text felds, because you only need to use one hook. Wereas on the otherwise you would need many `useState` hooks
 ___
 
 #### Before
 
-Right here is some code for a sign-up form. As you can see it is using two `useState` hooks and we need a lambda function to change
+Right here is some code for a sign-up form. As you can see it is using two `useState` hooks and we need a lambda function to change it
 
 ```jsx
 function App() {
@@ -124,7 +125,7 @@ And it eliminates the use of a lambda function
 
 [![Edit useEvent (rhh demo)](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/m770pm84n8)
 
-### <a id="usetrafficlight" > </a> useTrafficLight
+### <a id="usetrafficlight"> </a> useTrafficLight
 ___
 
 #### Before
@@ -163,7 +164,7 @@ import { useTrafficLight } from "react-hooks-helper";
 const AfterTrafficLight = ({ initialColor }) => {
   const [colorIndex, setColorIndex] = useTrafficLight(initialColor, [5000, 4000, 1000]);
 
-  return (
+  return ([]
     <div className="traffic-light">
       <Light color="#f00" active={colorIndex === 0} />
       <Light color="#ff0" active={colorIndex === 2} />
@@ -177,9 +178,9 @@ const AfterTrafficLight = ({ initialColor }) => {
 
 ## My Coding Journey
 
-On Dec 18, 2017, I did a talk at [ReactNYC](https://www.meetup.com/ReactNYC/) about the `useTrafficLight` code above, but it was the "before" code and did not use a custom hook, and certainly not `react-hooks-helper` because it was not out yet.
+On Dec 18, 2017, I did a talk at [ReactNYC](https://www.meetup.com/ReactNYC/) about the `useTrafficLight` code above, but it was the "before" code and did not use a custom hook, and _certainly_ not `react-hooks-helper` because it was not out yet!
 
-[![YouTube](https://user-images.githubusercontent.com/29359616/50529982-56a60000-0ac7-11e9-918b-87b28ece7db9.png)](https://www.youtube.com/watch?v=mbiryVTIJ4Q&t=3s)
+[![YouTube](https://user-images.githubusercontent.com/29359616/50539855-71bf5100-0b55-11e9-8c83-ac4b920fb5ea.png)](https://www.youtube.com/watch?v=mbiryVTIJ4Q&t=3s)
 
 
 ## License

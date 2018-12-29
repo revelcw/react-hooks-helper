@@ -91,14 +91,14 @@ function App() {
   const [lastName, setLastName] = useState("");
   return (
     <div className="App">
-      <input onChange={ ev => {
-        setTextState(ev.target.value)
+      <input type="text" value={firstName} onChange={ ev => {
+        setFirstName(ev.target.value)
       }} />
-      <div>{text}</div>
-      <input onChange={ ev => {
-        set(ev.target.value)
+      <div>{firstName}</div>
+      <input type="text" value={lastName} onChange={ ev => {
+        setLastName(ev.target.value)
       }} />
-      <div>{text}</div>
+      <div>{lastName}</div>
     </div>
   );
 }
@@ -106,12 +106,12 @@ function App() {
 #### After
 ```jsx
 function App() {
-  const [{firstName, lastName}, setValue] = useForm({first: "", last: ""});
+  const [{firstName, lastName}, setValue] = useForm({firstName: "", lastName: ""});
   return (
     <div className="App">
-      <input name="first" onChange={setValue} />
+      <input type="text" value={firstName}  name="firstName" onChange={setValue} />
       <div>{firstName}</div>
-      <input name="last" onChange={setValue} />
+      <input type="text" value={lastName} name="lastName" onChange={setValue} />
       <div>{lastName}</div>
     </div>
   );

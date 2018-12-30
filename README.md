@@ -21,8 +21,8 @@ Usage
  
 ```js
 const [bar, notBar] = useNot(bool);
-const [{foo, bar}, ] = useForm({foo, bar});
-const [bar, notBar] = useTrafficLight([durations]);
+const [{foo, bar}, setForm] = useForm({foo, bar});
+const currentValue = useTrafficLight(initialIndex, durations);
 ```
 
 ## Examples
@@ -78,12 +78,12 @@ Notice the `notValue` is not a lambda function, like in the **[before](#useNotBe
 [![Edit useNot  (rhh demo)](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/rwk86po7rn)
 
 ### useForm
-`useForm` is for an advanced search, sign-up form, etc, something with a lot of text felds, because you only need to use one hook. Wereas on the otherwise you would need many `useState` hooks
+`useForm` is for an advanced search, sign-up form, etc, something with a lot of text felds, because you only need to use one hook. Wereas on the otherwise you would need many `useState` hooks.
 ___
 
 #### Before
 
-Right here is some code for a sign-up form. As you can see it is using two `useState` hooks and we need a lambda function to change it
+Right here is some code for a sign-up form. As you can see it is using two `useState` hooks and we need a lambda function to change it.
 
 ```jsx
 function App() {
@@ -163,7 +163,7 @@ function App() {
 You see `useForm` takes the name of your `input` and changes the object, so you only have to create one `useForm`.
 You can have as many items in the object, and this 
 allows many inputs, but with still **_one_** `useForm`.
-And it eliminates the use of a lambda function
+And it eliminates the use of a lambda function.
 
 [![Edit useEvent (rhh demo)](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/m770pm84n8)
 
@@ -227,4 +227,4 @@ On Dec 18, 2017, I did a talk at [ReactNYC](https://www.meetup.com/ReactNYC/) ab
 
 ## License
 
-**[MIT](https://opensource.org/licenses/MIT)** Licensed
+**[MIT](LICENSE)** Licensed

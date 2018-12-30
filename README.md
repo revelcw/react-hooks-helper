@@ -201,10 +201,8 @@ const BeforeTrafficLight = ({ initialColor }) => {
 #### After
 
 ```jsx
-import { useTrafficLight } from "react-hooks-helper";
-
 const AfterTrafficLight = ({ initialColor }) => {
-  const [colorIndex, setColorIndex] = useTrafficLight(initialColor, [5000, 4000, 1000]);
+  const colorIndex = useTrafficLight(initialColor, [5000, 4000, 1000]);
 
   return (
     <div className="traffic-light">

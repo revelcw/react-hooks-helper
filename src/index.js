@@ -9,7 +9,7 @@ export const useNot = (initialValue) => {
 };
 
 export const useForm = (initialState) => {
-  const [formValues, setValue] = useState(initialState);
+  const [formValues, setValues] = useState(initialState);
 
   return [
     formValues,
@@ -17,13 +17,12 @@ export const useForm = (initialState) => {
       const {
         name, value, checked, type,
       } = ev.target;
-      const isCheckbox = type === 'checkbox' || type === 'radio';
-      setValue(currentValue => (
-        {
-          ...currentValue,
-          [name]: !isCheckbox || (isCheckbox && checked === true) ? value : checked,
-        }
-      ));
+      const isCheckbox = type === 'checkbox';
+
+      setValues(currentValue => ({
+        ...currentValue,
+        [name]: isCheckbox ? checked : value,
+      }));
     },
   ];
 };

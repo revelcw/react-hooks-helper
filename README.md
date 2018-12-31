@@ -1,6 +1,6 @@
 # react-hooks-helper
 
-A custom [React Hook](https://reactjs.org/docs/hooks-overview.html)  library that gives you custom hooks for your code
+A custom [React Hook](https://reactjs.org/docs/hooks-overview.html)  library that gives you custom hooks for your code.
 
 [![npm version](https://badge.fury.io/js/react-hooks-helper.svg)](https://badge.fury.io/js/react-hooks-helper)
 
@@ -13,7 +13,7 @@ To use `react-hook-lib`, you must use at minimum `react@16.7.0-alpha.0`. React H
 ## Installation
 
 ```sh
-npm i react-hooks-helper
+$ npm i react-hooks-helper
 ```
 
 ##
@@ -28,7 +28,7 @@ const currentValue = useTrafficLight(initialIndex, durations);
 ## Examples
 
 ### useNot
-`useNot` is a toggle function for react apps
+`useNot` is a toggle function for react apps.
 ___
 Here is a simple App that toggles a value to produce either a **blue** or a **red** square.
 

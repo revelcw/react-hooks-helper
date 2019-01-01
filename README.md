@@ -1,6 +1,6 @@
 # react-hooks-helper
 
-A custom [React Hook](https://reactjs.org/docs/hooks-overview.html)  library that gives you custom hooks for your code.
+A custom [React Hooks](https://reactjs.org/docs/hooks-overview.html)  library that gives you custom hooks for your code.
 
 [![npm version](https://badge.fury.io/js/react-hooks-helper.svg)](https://badge.fury.io/js/react-hooks-helper)
 

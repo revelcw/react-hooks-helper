@@ -1,7 +1,7 @@
 {
   "name": "react-hooks-helper",
-  "version": "1.1.4",
-  "description": "A simple React Hook lib.",
+  "version": "1.2.0",
+  "description": "A custom React Hooks library that gives you custom hooks for your code.",
   "main": "dist/react-hooks-helper.js",
   "umd:main": "dist/react-hooks-helper.umd.js",
   "module": "dist/react-hooks-helper.m.js",
@@ -10,7 +10,9 @@
   "scripts": {
     "prepublishOnly": "npm run build",
     "lint": "eslint src",
-    "build": "npm run lint && rimraf dist && microbundle -o dist/ --sourcemap false --target web",
+    "test": "jest",
+    "prebuild": "npm run lint && npm t && rimraf dist",
+    "build": "microbundle -o dist/ --sourcemap false --target web",
     "dev": "microbundle watch -o dist/ --sourcemap false --compress false"
   },
   "keywords": [
@@ -22,11 +24,19 @@
   ],
   "author": "revelcw",
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
     "eslint": "^5.10.0",
     "eslint-config-amex": "^9.0.0",
+    "jest": "^23.6.0",
+    "jest-dom": "^3.0.0",
     "microbundle": "^0.8.3",
     "react": "16.7.0-alpha.2",
     "react-dom": "16.7.0-alpha.2",
+    "react-testing-library": "^5.4.2",
     "rimraf": "^2.6.2"
   },
   "peerDependencies": {

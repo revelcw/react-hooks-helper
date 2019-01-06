@@ -1,12 +1,16 @@
 {
   "name": "react-hooks-helper",
-  "version": "1.2.1",
+  "version": "1.4.1",
   "description": "A custom React Hooks library that gives you custom hooks for your code.",
   "main": "dist/react-hooks-helper.js",
   "umd:main": "dist/react-hooks-helper.umd.js",
   "module": "dist/react-hooks-helper.m.js",
   "source": "src/index.js",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/revelcw/react-hooks-helper.git"
+  },
   "scripts": {
     "prepublishOnly": "npm run build",
     "lint": "eslint src",

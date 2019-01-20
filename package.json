@@ -1,6 +1,6 @@
 {
   "name": "react-hooks-helper",
-  "version": "1.4.1",
+  "version": "1.5.0-alpha.1",
   "description": "A custom React Hooks library that gives you custom hooks for your code.",
   "main": "dist/react-hooks-helper.js",
   "umd:main": "dist/react-hooks-helper.umd.js",
@@ -14,7 +14,8 @@
   "scripts": {
     "prepublishOnly": "npm run build",
     "lint": "eslint src",
-    "test": "jest",
+    "test": "jest --verbose --coverage --silent",
+    "test:watch": "jest --watch --runInBand --silent",
     "prebuild": "npm run lint && npm t && rimraf dist",
     "build": "microbundle -o dist/ --sourcemap false --target web",
     "dev": "microbundle watch -o dist/ --sourcemap false --compress false"
@@ -37,13 +38,13 @@
     "eslint-config-amex": "^9.0.0",
     "jest": "^23.6.0",
     "jest-dom": "^3.0.0",
-    "microbundle": "^0.8.3",
-    "react": "16.7.0-alpha.2",
-    "react-dom": "16.7.0-alpha.2",
+    "microbundle": "^0.9.0",
+    "react": "16.8.0-alpha.0",
+    "react-dom": "16.8.0-alpha.0",
     "react-testing-library": "^5.4.2",
     "rimraf": "^2.6.2"
   },
   "peerDependencies": {
-    "react": "16.7.0-alpha.2"
+    "react": "16.8.0-alpha.0"
   }
 }

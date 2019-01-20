@@ -9,7 +9,7 @@ hooks for your code.
 
 ## Requirement ⚠️
 
-To use `react-hook-lib`, you must use `react@16.8.0-alpha.0`. React Hooks is currently at
+To use `react-hooks-helper`, you must use `react@16.8.0-alpha.0`. React Hooks is currently at
 **[RFC](https://github.com/reactjs/rfcs/pull/68)** stage.
 
 ## Installation

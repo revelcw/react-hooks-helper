@@ -1,6 +1,6 @@
 {
   "name": "react-hooks-helper",
-  "version": "1.5.0-alpha.1",
+  "version": "1.5.0",
   "description": "A custom React Hooks library that gives you custom hooks for your code.",
   "main": "dist/react-hooks-helper.js",
   "umd:main": "dist/react-hooks-helper.umd.js",
@@ -25,7 +25,10 @@
     "hooks",
     "react",
     "utils",
-    "lib"
+    "lib",
+    "form",
+    "step",
+    "wizard"
   ],
   "author": "revelcw",
   "devDependencies": {

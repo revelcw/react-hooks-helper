@@ -1,82 +1,54 @@
-import React from 'react';
-import { render, fireEvent, cleanup } from 'react-testing-library';
+import { proxyHook, cleanup } from 'react-proxy-hook';
 import 'jest-dom/extend-expect';
 
 import { useForm } from '../src';
 
+const useFormProxy = proxyHook(useForm);
+
 afterEach(cleanup);
 
-const Component = () => {
-  const initialValues = {
-    foo: 'foo',
-    isBar: false,
-  };
-
-  const [{ foo, isBar }, setForm] = useForm(initialValues);
-  return (
-    <div>
-      <input type="text" name="foo" value={foo} onChange={setForm} />
-      <input type="checkbox" name="isBar" checked={isBar} onChange={setForm} />
-    </div>
-  );
+const initialValues = {
+  foo: 'foo',
+  isBar: false,
 };
 
-const NestedComponent = () => {
-  const initialValues = {
-    foo: {
-      bar: 'bar',
-    },
-    foo2: {
-      bar: 'bar',
-    },
-  };
-
-  const [{ foo, foo2 }, setForm] = useForm(initialValues);
-  return (
-    <div>
-      <input type="text" name="foo.bar" value={foo.bar} onChange={setForm} />
-      <input type="text" name="foo2.bar" value={foo2.bar} onChange={setForm} />
-    </div>
-  );
+const initialValuesNested = {
+  foo: {
+    bar: 'bar',
+  },
+  foo2: {
+    bar: 'bar',
+  },
 };
+
+const formData = 0;
+const setForm = 1;
 
 describe('useForm', () => {
   test('returns the initial values set in defaultValues', () => {
-    const { container } = render(<Component />);
-
-    const fooEl = container.firstChild.firstChild;
-    expect(fooEl.value).toBe('foo');
-
-    const isBarEl = container.firstChild.lastChild;
-    expect(isBarEl.checked).toBe(false);
+    const form = useFormProxy(initialValues);
+    expect(form[formData].foo).toBe('foo');
+    expect(form[formData].isBar).toBe(false);
   });
 
   test('returns changes a text field when we fire an onChange', () => {
-    const { container } = render(<Component />);
-
-    const fooEl = container.firstChild.firstChild;
-    fireEvent.change(fooEl, { target: { value: 'bar' } });
-    expect(fooEl.value).toBe('bar');
+    const form = useFormProxy(initialValues);
+    form[setForm]({ target: { type: 'text', name: 'foo', value: 'bar' } });
+    expect(form[formData].foo).toBe('bar');
   });
 
   test('returns changes a checkbox when we fire an onChange', () => {
-    const { container } = render(<Component />);
-
-    const isBarEl = container.firstChild.lastChild;
-    fireEvent.click(isBarEl);
-    expect(isBarEl.checked).toBe(true);
+    const form = useFormProxy(initialValues);
+    form[setForm]({ target: { type: 'checkbox', name: 'isBar', checked: true } });
+    expect(form[formData].isBar).toBe(true);
   });
 
   test('supports nested paths for names', () => {
-    const { container } = render(<NestedComponent />);
-
-    const fooEl = container.firstChild.firstChild;
-    const foo2El = container.firstChild.lastChild;
-    expect(fooEl.value).toBe('bar');
-    expect(foo2El.value).toBe('bar');
-
-    fireEvent.change(fooEl, { target: { value: 'baz' } });
-    expect(fooEl.value).toBe('baz');
-    expect(foo2El.value).toBe('bar');
+    const form = useFormProxy(initialValuesNested);
+    expect(form[formData].foo.bar).toBe('bar');
+    expect(form[formData].foo2.bar).toBe('bar');
+    form[setForm]({ target: { type: 'text', name: 'foo.bar', value: 'baz' } });
+    expect(form[formData].foo.bar).toBe('baz');
+    expect(form[formData].foo2.bar).toBe('bar');
   });
 });

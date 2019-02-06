@@ -1,4 +1,4 @@
-import { testHook, cleanup } from 'react-proxy-hook';
+import { testHook, act, cleanup } from 'react-testing-library';
 import 'jest-dom/extend-expect';
 
 import { useNot } from '../src';
@@ -36,7 +36,7 @@ describe('useNot', () => {
     expect(value).toBe(false);
     notValue();
     expect(value).toBe(true);
-    notValue();
+    act(() => notValue());
     expect(value).toBe(false);
   });
 });

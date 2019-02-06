@@ -1,4 +1,4 @@
-import { testHook, cleanup } from 'react-proxy-hook';
+import { testHook, act, cleanup } from 'react-testing-library';
 import 'jest-dom/extend-expect';
 
 import { useForm } from '../src';
@@ -31,7 +31,7 @@ describe('useForm', () => {
     let foo, setForm;
     testHook(() => ([{ foo }, setForm] = useForm(initialValues)));
     const event = { target: { type: 'text', name: 'foo', value: 'bar' } };
-    setForm(event);
+    act(() => setForm(event));
     expect(foo).toBe('bar');
   });
 
@@ -39,7 +39,7 @@ describe('useForm', () => {
     let isBar, setForm;
     testHook(() => ([{ isBar }, setForm] = useForm(initialValues)));
     const event = { target: { type: 'checkbox', name: 'isBar', checked: true } };
-    setForm(event);
+    act(() => setForm(event));
     expect(isBar).toBe(true);
   });
 
@@ -47,7 +47,7 @@ describe('useForm', () => {
     let foo, foo2, setForm;
     testHook(() => ([{ foo, foo2 }, setForm] = useForm(initialValuesNested)));
     const event = { target: { type: 'text', name: 'foo.bar', value: 'baz' } };
-    setForm(event);
+    act(() => setForm(event));
     expect(foo.bar).toBe('baz');
     expect(foo2.bar).toBe('bar');
   });

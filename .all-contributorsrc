@@ -44,6 +44,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "permadiwibisono",
+      "name": "Permadi Wibisono",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/14840070?v=4",
+      "profile": "https://bradastore.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7

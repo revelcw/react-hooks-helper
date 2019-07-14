@@ -1,5 +1,5 @@
 # react-hooks-helper
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors)
 
 A custom [React Hooks](https://reactjs.org/docs/hooks-overview.html) library that gives you custom
 hooks for your code.
@@ -389,8 +389,16 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/all-contri
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://avatars2.githubusercontent.com/u/29359616?v=4" width="100px;" alt="Revel Carlberg West"/><br /><sub><b>Revel Carlberg West</b></sub>](https://github.com/revelcw)<br />[🚇](#infra-revelcw "Infrastructure (Hosting, Build-Tools, etc)") [⚠️](https://github.com/revelcw/react-hooks-helper/commits?author=revelcw "Tests") [💡](#example-revelcw "Examples") [🤔](#ideas-revelcw "Ideas, Planning, & Feedback") [🚧](#maintenance-revelcw "Maintenance") [👀](#review-revelcw "Reviewed Pull Requests") [🔧](#tool-revelcw "Tools") [💻](https://github.com/revelcw/react-hooks-helper/commits?author=revelcw "Code") | [<img src="https://avatars3.githubusercontent.com/u/887639?v=4" width="100px;" alt="Donavon West"/><br /><sub><b>Donavon West</b></sub>](http://donavon.com)<br />[💻](https://github.com/revelcw/react-hooks-helper/commits?author=donavon "Code") [🤔](#ideas-donavon "Ideas, Planning, & Feedback") [⚠️](https://github.com/revelcw/react-hooks-helper/commits?author=donavon "Tests") | [<img src="https://avatars2.githubusercontent.com/u/18808?v=4" width="100px;" alt="Sunil Pai"/><br /><sub><b>Sunil Pai</b></sub>](https://github.com/threepointone)<br />[📖](https://github.com/revelcw/react-hooks-helper/commits?author=threepointone "Documentation") | [<img src="https://avatars1.githubusercontent.com/u/14840070?v=4" width="100px;" alt="Permadi Wibisono"/><br /><sub><b>Permadi Wibisono</b></sub>](https://bradastore.com)<br />[💻](https://github.com/revelcw/react-hooks-helper/commits?author=permadiwibisono "Code") |
-| :---: | :---: | :---: | :---: |
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/revelcw"><img src="https://avatars2.githubusercontent.com/u/29359616?v=4" width="100px;" alt="Revel Carlberg West"/><br /><sub><b>Revel Carlberg West</b></sub></a><br /><a href="#infra-revelcw" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/revelcw/react-hooks-helper/commits?author=revelcw" title="Tests">⚠️</a> <a href="#example-revelcw" title="Examples">💡</a> <a href="#ideas-revelcw" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-revelcw" title="Maintenance">🚧</a> <a href="#review-revelcw" title="Reviewed Pull Requests">👀</a> <a href="#tool-revelcw" title="Tools">🔧</a> <a href="https://github.com/revelcw/react-hooks-helper/commits?author=revelcw" title="Code">💻</a></td>
+    <td align="center"><a href="http://donavon.com"><img src="https://avatars3.githubusercontent.com/u/887639?v=4" width="100px;" alt="Donavon West"/><br /><sub><b>Donavon West</b></sub></a><br /><a href="https://github.com/revelcw/react-hooks-helper/commits?author=donavon" title="Code">💻</a> <a href="#ideas-donavon" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/revelcw/react-hooks-helper/commits?author=donavon" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://github.com/threepointone"><img src="https://avatars2.githubusercontent.com/u/18808?v=4" width="100px;" alt="Sunil Pai"/><br /><sub><b>Sunil Pai</b></sub></a><br /><a href="https://github.com/revelcw/react-hooks-helper/commits?author=threepointone" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://bradastore.com"><img src="https://avatars1.githubusercontent.com/u/14840070?v=4" width="100px;" alt="Permadi Wibisono"/><br /><sub><b>Permadi Wibisono</b></sub></a><br /><a href="https://github.com/revelcw/react-hooks-helper/commits?author=permadiwibisono" title="Code">💻</a></td>
+    <td align="center"><a href="https://mmap.page"><img src="https://avatars1.githubusercontent.com/u/114114?v=4" width="100px;" alt="Jang Rush"/><br /><sub><b>Jang Rush</b></sub></a><br /><a href="https://github.com/revelcw/react-hooks-helper/commits?author=weakish" title="Documentation">📖</a></td>
+  </tr>
+</table>
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

@@ -53,6 +53,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "weakish",
+      "name": "Jang Rush",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/114114?v=4",
+      "profile": "https://mmap.page",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7

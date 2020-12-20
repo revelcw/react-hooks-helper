@@ -1,4 +1,5 @@
 # react-hooks-helper
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors)
 
 A custom [React Hooks](https://reactjs.org/docs/hooks-overview.html) library that gives you custom
@@ -8,17 +9,17 @@ hooks for your code.
 
 ![react-hooks-helper](https://user-images.githubusercontent.com/29359616/50549517-422f4800-0c2c-11e9-9d5c-380954b0d05e.png)
 
->🧙‍ `useStep` is a multi-purpose step wizard. Build an image carousel!
+> 🧙‍ `useStep` is a multi-purpose step wizard. Build an image carousel!
 >
->📋 `useForm` for dead simple form control with nested object support.
+> 📋 `useForm` for dead simple form control with nested object support.
 >
->🚦 `useTrafficLight` easily build a fun traffic light component.
+> 🚦 `useTrafficLight` easily build a fun traffic light component.
 >
->‼ `useNot` to simplify toggling `true` / `false` without lambda functions.
+> ‼ `useNot` to simplify toggling `true` / `false` without lambda functions.
 >
 > 🐐 Full 100% test coverage!
 >
->🔥 Blazing fast!
+> 🔥 Blazing fast!
 
 ## Requirement ⚠️
 
@@ -58,10 +59,10 @@ const { isPaused, index, step, navigation } = useStep(config);
 
 You pass `useStep` a configuration object containing the following (\* = required).
 
-| Key                   | Description |
-| :-------------------- | :------------------------------------------------------------------ |
-| `steps`\*             | Either an array containing the steps to process or an integer specifying the number of steps.  |
-| `initialStep`         | The starting step—either a string id or an index. Default = 0.                      |
+| Key                   | Description                                                                                                                                                                                                           |
+| :-------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `steps`\*             | Either an array containing the steps to process or an integer specifying the number of steps.                                                                                                                         |
+| `initialStep`         | The starting step—either a string id or an index. Default = 0.                                                                                                                                                        |
 | `autoAdvanceDuration` | If you wish the steps to auto-advance, specify the number of milliseconds. You can also include an `autoAdvanceDuration` in each `step` in your `steps` array, if you wish to have different durations for each step. |
 
 #### Return object
@@ -95,7 +96,7 @@ You use the "Previous" and "Next" buttons to navigate.
 function App() {
   const {
     index,
-    navigation: { previous, next }
+    navigation: { previous, next },
   } = useStep({ steps: 3 });
   return (
     <div>
@@ -106,8 +107,12 @@ function App() {
       {index === 2 && <div>This is step 3</div>}
 
       <div>
-        <button disabled={index === 0} onClick={previous}>Previous</button>
-        <button disabled={index === 2} onClick={next}>Next</button>
+        <button disabled={index === 0} onClick={previous}>
+          Previous
+        </button>
+        <button disabled={index === 2} onClick={next}>
+          Next
+        </button>
       </div>
     </div>
   );
@@ -121,7 +126,6 @@ It automatically advances after 5 seconds. You can also click previous/next, or
 navigate directly to a particular image.
 
 [![image](https://user-images.githubusercontent.com/887639/51504518-73281600-1daf-11e9-9509-07ca1145c291.png)](https://codesandbox.io/s/31228l0rnm)
-
 
 [![Edit Carousel using hooks (rhh demo)](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/31228l0rnm)
 
@@ -139,16 +143,16 @@ need a lambda function to change it.
 
 ```jsx
 function App() {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [gender, setGender] = useState('Male');
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [gender, setGender] = useState("Male");
   const [isAccept, setAcceptToC] = useState(false);
   return (
     <div className="App">
       <input
         type="text"
         value={firstName}
-        onChange={ev => {
+        onChange={(ev) => {
           setFirstName(ev.target.value);
         }}
       />
@@ -156,7 +160,7 @@ function App() {
       <input
         type="text"
         value={lastName}
-        onChange={ev => {
+        onChange={(ev) => {
           setLastName(ev.target.value);
         }}
       />
@@ -166,22 +170,22 @@ function App() {
           <input
             type="radio"
             value="Female"
-            checked={gender === 'Female'}
-            onChange={ev => {
+            checked={gender === "Female"}
+            onChange={(ev) => {
               setGender(ev.target.value);
             }}
-          />{' '}
+          />{" "}
           Female
         </div>
         <div className="radio">
           <input
             type="radio"
             value="Male"
-            checked={gender === 'Male'}
-            onChange={ev => {
+            checked={gender === "Male"}
+            onChange={(ev) => {
               setGender(ev.target.value);
             }}
-          />{' '}
+          />{" "}
           Male
         </div>
         <div>Selected Gender: {gender}</div>
@@ -191,11 +195,11 @@ function App() {
           <input
             type="checkbox"
             value="true"
-            checked={isAccept === 'true'}
-            onChange={ev => {
+            checked={isAccept === "true"}
+            onChange={(ev) => {
               setAcceptToC(ev.target.checked);
             }}
-          />{' '}
+          />{" "}
           I accept and agree Terms &amp; Conditions.
         </div>
       </div>
@@ -209,31 +213,52 @@ function App() {
 ```jsx
 function App() {
   const [{ firstName, lastName, gender, isAccept }, setValue] = useForm({
-    firstName: '',
-    lastName: '',
-    gender: 'Male',
+    firstName: "",
+    lastName: "",
+    gender: "Male",
     isAccept: false,
   });
   return (
     <div className="App">
-      <input type="text" value={firstName} name="firstName" onChange={setValue} />
+      <input
+        type="text"
+        value={firstName}
+        name="firstName"
+        onChange={setValue}
+      />
       <div>{firstName}</div>
       <input type="text" value={lastName} name="lastName" onChange={setValue} />
       <div>{lastName}</div>
       <div className="radio-group">
         <div className="radio">
-          <input type="radio" value="Female" checked={gender === 'Female'} onChange={setValue} />{' '}
+          <input
+            type="radio"
+            value="Female"
+            checked={gender === "Female"}
+            onChange={setValue}
+          />{" "}
           Female
         </div>
         <div className="radio">
-          <input type="radio" value="Male" checked={gender === 'Male'} onChange={setValue} /> Male
+          <input
+            type="radio"
+            value="Male"
+            checked={gender === "Male"}
+            onChange={setValue}
+          />{" "}
+          Male
         </div>
         <div>Selected Gender: {gender}</div>
       </div>
       <div>
         <div className="checkbox">
-          <input type="checkbox" value="true" checked={isAccept === 'true'} onChange={setValue} /> I
-          accept and agree Terms &amp; Conditions.
+          <input
+            type="checkbox"
+            value="true"
+            checked={isAccept === "true"}
+            onChange={setValue}
+          />{" "}
+          I accept and agree Terms &amp; Conditions.
         </div>
       </div>
     </div>
@@ -252,12 +277,17 @@ one `useForm`. You can have as many items in the object, and this allows many in
 In your markup, you simply add the dots in the `name` field like this.
 
 ```html
-<input type="text" value={billing.city} name="billing.city" onChange={setValue} />
+<input
+  type="text"
+  value="{billing.city}"
+  name="billing.city"
+  onChange="{setValue}"
+/>
 ```
 
 #### Live demo
 
-[![Edit useForm (rhh demo)](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/patient-night-4jy0pxxxo0?fontsize=14)
+[![Edit useForm (rhh demo)](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/4jy0pxxxo0)
 
 ### <a id="usetrafficlight"> </a> useTrafficLight
 
@@ -271,15 +301,12 @@ const lightDurations = [5000, 4000, 1000];
 const BeforeTrafficLight = ({ initialColor }) => {
   const [colorIndex, setColorIndex] = useState(initialColor);
 
-  useEffect(
-    () => {
-      const timer = setTimeout(() => {
-        setColorIndex((colorIndex + 1) % 3);
-      }, lightDurations[colorIndex]);
-      return () => clearTimeout(timer);
-    },
-    [colorIndex]
-  );
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setColorIndex((colorIndex + 1) % 3);
+    }, lightDurations[colorIndex]);
+    return () => clearTimeout(timer);
+  }, [colorIndex]);
 
   return (
     <div className="traffic-light">
@@ -349,7 +376,7 @@ function App() {
       style={{
         width: 100,
         height: 100,
-        backgroundColor: value ? 'red' : 'blue',
+        backgroundColor: value ? "red" : "blue",
       }}
     />
   );
@@ -381,7 +408,7 @@ Here's my video.
 
 Have you built an app (real or sample) using `react-hooks-helper`? Make a PR and add it to the list below.
 
-* [Multi-step form demo](https://codesandbox.io/s/github/donavon/use-step-multi-step-form-demo)
+- [Multi-step form demo](https://codesandbox.io/s/github/donavon/use-step-multi-step-form-demo)
 
 ## Contributors
 

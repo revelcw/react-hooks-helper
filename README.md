@@ -287,7 +287,7 @@ In your markup, you simply add the dots in the `name` field like this.
 
 #### Live demo
 
-[![Edit useForm (rhh demo)](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/4jy0pxxxo0)
+[![Edit useForm (rhh demo)](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/useform-rhh-demo-4jy0pxxxo0)
 
 ### <a id="usetrafficlight"> </a> useTrafficLight
 

@@ -1,6 +1,6 @@
 {
   "name": "react-hooks-helper",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "A custom React Hooks library that gives you custom hooks for your code.",
   "main": "dist/react-hooks-helper.js",
   "umd:main": "dist/react-hooks-helper.umd.js",
@@ -42,12 +42,12 @@
     "jest": "^23.6.0",
     "jest-dom": "^3.0.0",
     "microbundle": "^0.9.0",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-testing-library": "^5.5.3",
     "rimraf": "^2.6.2"
   },
   "peerDependencies": {
-    "react": "^16.8.0"
+    "react": "^17.0.2"
   }
 }
